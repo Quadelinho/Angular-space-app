@@ -1,5 +1,17 @@
-<h4>{{spaceShip.modelName}}</h4>
+<h4>{{spaceShip.modelName}}</h4> <!--using {{}} is a notation informing that variable value should replace given token-->
 
 <div class="images">
   <img [src]="spaceShip.imageUrl"/>
+</div>
+
+<div class="health" [title]="'Health ' + spaceShip.health + '%'"> <!--Title is a tooltip-->
+  <div [style.width.%]="spaceShip.health"></div>
+</div>
+
+<div class="property" [class.active]="spaceShip.activeShields">
+  SHIELDS
+</div>
+
+<div class="property" [class.active]="spaceShip.activeWeapons">
+  WEAPONS
 </div>
