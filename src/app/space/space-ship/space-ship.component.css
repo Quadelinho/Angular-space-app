@@ -19,6 +19,7 @@ img {
   background-color: green;
   height: 100%;
 }
+
 /*.name refers to a class name defined in html*/
 .property {
   display: inline-block;
