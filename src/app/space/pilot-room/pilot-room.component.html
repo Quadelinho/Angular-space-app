@@ -1,0 +1,11 @@
+<p>pilot-room works!</p>
+<app-pilot *ngFor="let pilot of pilots" [pilot]="pilot" [class.selected]="selectedPilot === pilot"> <!-- === compares value and type, == compares just value-->
+  <button class="select-button" *ngIf="selectedPilot !== pilot; else deselectButton" (click)="select(pilot)">
+    Zaznacz
+  </button>
+  <ng-template #deselectButton>
+      <button class="deselect-button" (click)="select(null)">
+        Odznacz
+      </button>
+  </ng-template>
+</app-pilot>
