@@ -10,7 +10,7 @@ export class PilotRoomComponent implements OnInit {
 
   pilots: Pilot[] = [];
   selectedPilot: Pilot = null;
-  @Output() selected = new EventEmitter<Pilot>();
+  @Output() selected = new EventEmitter<Pilot>(); /*Equivalent of Event in C#*/
 
   constructor() { }
 
@@ -21,7 +21,7 @@ export class PilotRoomComponent implements OnInit {
 
   select(pilot: Pilot): void {
     this.selectedPilot = pilot;
-    this.selected.emit(pilot);
+    this.selected.emit(pilot); /*triggers an event - notify listeners */
   }
 
   pilotLeave() {

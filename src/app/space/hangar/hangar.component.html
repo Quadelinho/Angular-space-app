@@ -6,6 +6,5 @@
   </app-space-ship>
 </div>
 <div class="hangar-section">
-  <!--<app-pilot-room></app-pilot-room>-->
-  <app-pilot-room (selected)="selectedPilot = $event"></app-pilot-room> <!--selected is a field of app-pilot-room class selectedPilot is a variable defined in hangar.component.ts; $event is a listener subscribed for the event emitted from app-pilot-room-->
+  <app-pilot-room (selected)="selectedPilot = $event"></app-pilot-room> <!--selected is an event from app-pilot-room class and here the event is handled; selectedPilot is a variable defined in hangar.component.ts; $event is a listener subscribed for the event emitted from app-pilot-room-->
 </div>
