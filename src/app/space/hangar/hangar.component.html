@@ -1,7 +1,11 @@
 <div class="hangar-section">
   <p>hangar works!</p>
-  <app-space-ship *ngFor="let spaceShip of spaceShips" [spaceShip]="spaceShip"></app-space-ship>
+  <app-space-ship *ngFor="let spaceShip of spaceShips" [spaceShip]="spaceShip"> <!--spaceShips - is an array defined and filled in hangar.component.ts class-->
+    <button *ngIf="selectedPilot && !spaceShip.pilot" (click)="assignPilot(spaceShip)">Pilotuj</button>
+    <button *ngIf="spaceShip.pilot" (click)="deassignPilot(spaceShip)">Opuść</button>
+  </app-space-ship>
 </div>
 <div class="hangar-section">
-  <app-pilot-room></app-pilot-room>
+  <!--<app-pilot-room></app-pilot-room>-->
+  <app-pilot-room (selected)="selectedPilot = $event"></app-pilot-room> <!--selected is a field of app-pilot-room class selectedPilot is a variable defined in hangar.component.ts; $event is a listener subscribed for the event emitted from app-pilot-room-->
 </div>
